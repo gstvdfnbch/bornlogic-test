@@ -29,16 +29,9 @@ class APIService {
                 return
             }
             
-            if let jsonString = String(data: data, encoding: .utf8) {
-                print("Received JSON: \(jsonString)")
-            } else {
-                print("Failed to convert data to string")
-            }
-            
             //Decode the data as ModelsData
             do {
                 let decoder = JSONDecoder()
-                
                 let newsResponse = try decoder.decode(NewsResponse.self, from: data)
                 completion(newsResponse.articles, nil)
             } catch {

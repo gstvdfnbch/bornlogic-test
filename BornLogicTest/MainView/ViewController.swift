@@ -14,13 +14,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Make the register from a tableviewcell
+        //Make the register for the component for the table View
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
 
-        //Add the table view to view
+        //Add the tablaBiew to view
         view.addSubview(tableView)
         
-        //Configure constraints for the table view
+        //Constraints for the table view
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -46,15 +46,3 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articleViewModel.articles.count // Number of articles
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
-        let article = articleViewModel.articles[indexPath.row]
-        cell.configure(with: article) // Configure cell with article data
-        return cell
-    }
-}
