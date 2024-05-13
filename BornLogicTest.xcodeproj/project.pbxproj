@@ -109,7 +109,6 @@
 			children = (
 				7BF42E182BF26F0C003E7995 /* AppDelegate.swift */,
 				7BF42E1A2BF26F0C003E7995 /* SceneDelegate.swift */,
-				7BF42E522BF27D10003E7995 /* Model */,
 				7BF42E532BF27D1C003E7995 /* APIService */,
 				7BF42E4E2BF27CB1003E7995 /* MainView */,
 				7BF42E1E2BF26F0C003E7995 /* Main.storyboard */,
@@ -166,6 +165,7 @@
 		7BF42E532BF27D1C003E7995 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
+				7BF42E522BF27D10003E7995 /* Model */,
 				7BF42E482BF27091003E7995 /* APIService.swift */,
 			);
 			path = APIService;
