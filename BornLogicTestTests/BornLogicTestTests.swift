@@ -20,7 +20,7 @@ final class BornLogicTestTests: XCTestCase {
     
     func testFetchAllArticles() throws {
         //Call the fetch to make sure if the requisition is correct
-        NewsAPIService.shared.fetchAllArticles { articles, error in
+        APIService.shared.fetchAllArticles { articles, error in
             // Check for errors response
             XCTAssertNil(error, "Error fetching articles: \(error?.localizedDescription ?? "")")
             
