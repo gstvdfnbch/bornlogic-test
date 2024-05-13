@@ -11,11 +11,10 @@ class ArticleViewModel {
     
     //Make the fetch when the class has created
     init() {
-        fetchArticles(completion: { _ in })
     }
     
     //Function to make the fetch and indicates when is done
-    private func fetchArticles(completion: @escaping (Error?) -> Void) {
+    func fetchArticles(completion: @escaping (Error?) -> Void) {
         newsAPIService.fetchAllArticles { [weak self] articles, error in
             guard let self = self else { return }
             if let error = error {
