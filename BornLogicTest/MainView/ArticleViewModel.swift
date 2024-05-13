@@ -5,6 +5,7 @@ class ArticleViewModel {
     
     //Array data
     var articles: [Article] = []
+    var isDone: Bool = false
     
     //Function to make the fetch and indicates when is done
     func fetchArticles(completion: @escaping (Error?) -> Void) {
@@ -14,6 +15,7 @@ class ArticleViewModel {
                 completion(error)
             } else if let articles = articles {
                 self.articles = articles
+                self.isDone = true
                 completion(nil)
             }
         }

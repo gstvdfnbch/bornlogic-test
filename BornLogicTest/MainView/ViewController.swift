@@ -14,7 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Make the register for the component for the table View
+        title = "Apple articles"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+
+        //Make the register for the cell component for the table View
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
 
         //Add the tablaBiew to view

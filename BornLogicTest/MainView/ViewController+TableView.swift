@@ -9,6 +9,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
         let article = articleViewModel.articles[indexPath.row]
         cell.configure(with: article) // Configure cell with article data
+        cell.selectionStyle = .none
+
         return cell
     }
     
