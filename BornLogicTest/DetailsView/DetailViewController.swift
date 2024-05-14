@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
     let publishedAtLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .right
         return label
     }()
     
@@ -32,6 +34,13 @@ class DetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+         let activityIndicator = UIActivityIndicatorView(style: .gray)
+         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+         activityIndicator.hidesWhenStopped = true // Hide when not animating
+         return activityIndicator
+     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +65,8 @@ class DetailViewController: UIViewController {
         scrollView.addSubview(imageView)
         scrollView.addSubview(publishedAtLabel)
         scrollView.addSubview(contentLabel)
-        
+        scrollView.addSubview(activityIndicator) // Add activity indicator
+
         // Constraints for scrollView
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -87,6 +97,11 @@ class DetailViewController: UIViewController {
             contentLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             contentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -8)
         ])
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+        ])
     }
     
     func updateUI() {
@@ -95,14 +110,21 @@ class DetailViewController: UIViewController {
         }
         
         // Update image view with URL
+//        if let imageUrl = article.urlToImage, let url = URL(string: imageUrl) {
+//            imageView.load(url: url)
+//        }
+        
         if let imageUrl = article.urlToImage, let url = URL(string: imageUrl) {
-            imageView.load(url: url)
+            activityIndicator.startAnimating() // Start animating activity indicator
+            imageView.load(url: url) { [weak self] success in
+                self?.activityIndicator.stopAnimating() // Stop animating activity indicator when image loading is complete
+            }
         }
         
         // Update published date label
-        publishedAtLabel.text = article.publishedAt
+        publishedAtLabel.text = article.publishedAt.formatDateString()
         
         // Update content label
-        contentLabel.text = article.content
+        contentLabel.text = article.description
     }
 }

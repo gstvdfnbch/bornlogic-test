@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B9932A72BF3E3810049FD09 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9932A62BF3E3810049FD09 /* Extentions.swift */; };
+		7B65885F2BF3E9BB0055D896 /* Extentions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65885E2BF3E9BB0055D896 /* Extentions+String.swift */; };
+		7B9932A72BF3E3810049FD09 /* Extentions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9932A62BF3E3810049FD09 /* Extentions+UIImageView.swift */; };
 		7BF42E192BF26F0C003E7995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF42E182BF26F0C003E7995 /* AppDelegate.swift */; };
 		7BF42E1B2BF26F0C003E7995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF42E1A2BF26F0C003E7995 /* SceneDelegate.swift */; };
 		7BF42E1D2BF26F0C003E7995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF42E1C2BF26F0C003E7995 /* ViewController.swift */; };
@@ -43,7 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B9932A62BF3E3810049FD09 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		7B65885E2BF3E9BB0055D896 /* Extentions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extentions+String.swift"; sourceTree = "<group>"; };
+		7B9932A62BF3E3810049FD09 /* Extentions+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extentions+UIImageView.swift"; sourceTree = "<group>"; };
 		7BF42E152BF26F0C003E7995 /* BornLogicTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BornLogicTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF42E182BF26F0C003E7995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BF42E1A2BF26F0C003E7995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B65885D2BF3E9AA0055D896 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				7B9932A62BF3E3810049FD09 /* Extentions+UIImageView.swift */,
+				7B65885E2BF3E9BB0055D896 /* Extentions+String.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
 		7BF42E0C2BF26F0C003E7995 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +126,7 @@
 			children = (
 				7BF42E182BF26F0C003E7995 /* AppDelegate.swift */,
 				7BF42E1A2BF26F0C003E7995 /* SceneDelegate.swift */,
+				7B65885D2BF3E9AA0055D896 /* Extention */,
 				7BF42E522BF27D10003E7995 /* Model */,
 				7BF42E532BF27D1C003E7995 /* APIService */,
 				7BF42E4E2BF27CB1003E7995 /* MainView */,
@@ -122,7 +134,6 @@
 				7BF42E212BF26F0D003E7995 /* Assets.xcassets */,
 				7BF42E232BF26F0D003E7995 /* LaunchScreen.storyboard */,
 				7BF42E262BF26F0D003E7995 /* Info.plist */,
-				7B9932A62BF3E3810049FD09 /* Extentions.swift */,
 			);
 			path = BornLogicTest;
 			sourceTree = "<group>";
@@ -321,12 +332,13 @@
 				7BF42E1D2BF26F0C003E7995 /* ViewController.swift in Sources */,
 				7BF42E4B2BF27256003E7995 /* ModelsData.swift in Sources */,
 				7BF42E192BF26F0C003E7995 /* AppDelegate.swift in Sources */,
-				7B9932A72BF3E3810049FD09 /* Extentions.swift in Sources */,
+				7B9932A72BF3E3810049FD09 /* Extentions+UIImageView.swift in Sources */,
 				7BF42E4D2BF27A53003E7995 /* ArticleViewModel.swift in Sources */,
 				7BF42E492BF27091003E7995 /* APIService.swift in Sources */,
 				7BF42E512BF27CC6003E7995 /* ArticleTableViewCell.swift in Sources */,
 				7BF42E552BF2AEFA003E7995 /* ViewController+TableView.swift in Sources */,
 				7BF42E1B2BF26F0C003E7995 /* SceneDelegate.swift in Sources */,
+				7B65885F2BF3E9BB0055D896 /* Extentions+String.swift in Sources */,
 				7BF42E5A2BF2B51F003E7995 /* DetailViewModel.swift in Sources */,
 				7BF42E582BF2B504003E7995 /* DetailViewController.swift in Sources */,
 			);
