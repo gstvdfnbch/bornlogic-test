@@ -11,10 +11,8 @@ class ArticleTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        // Adiciona os subviews
         addSubview(titleLabel)
         
-        // Configura as restrições
         NSLayoutConstraint.activate([
             // Restrições para o titleLabel
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
