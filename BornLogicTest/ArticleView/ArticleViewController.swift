@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ArticleViewController: UIViewController {
     
     let articleViewModel = ArticleViewModel() // Instantiate ArticleViewModel
     
@@ -35,7 +35,9 @@ class ViewController: UIViewController {
         // Set table view delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+
         // Fetch articles
         articleViewModel.fetchArticles { [weak self] error in
             guard let self = self else { return }

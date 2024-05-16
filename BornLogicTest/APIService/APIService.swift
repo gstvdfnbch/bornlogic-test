@@ -33,11 +33,23 @@ class APIService {
             do {
                 let decoder = JSONDecoder()
                 let newsResponse = try decoder.decode(NewsResponse.self, from: data)
-                completion(newsResponse.articles, nil)
+                let listArticles = self.removeArticlesWithRemovedContent(articles: newsResponse.articles)
+                completion(listArticles, nil)
             } catch {
                 completion(nil, error)
             }
             
         }.resume()
+    }
+    
+    func removeArticlesWithRemovedContent(articles: [Article]) -> [Article] {
+        var newListArticles = articles.filter { article in
+            return article.title != "[Removed]"
+            && article.description != "[Removed]"
+            && article.urlToImage != nil
+            && article.content != "[Removed]"
+        }
+        
+        return newListArticles
     }
 }
